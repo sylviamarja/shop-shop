@@ -1,39 +1,27 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
+import { removeCart, updateCartQuantity } from '../../app/actions/actions';
 import { idbPromise } from "../../utils/helpers";
+import { useDispatch } from 'react-redux';
+
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
-
   const removeFromCart = item => {
-    dispatch({
-      type: REMOVE_FROM_CART,
-      _id: item._id
-    });
+    dispatch(removeCart(item._id));
     idbPromise('cart', 'delete', { ...item });
-
   };
 
   const onChange = (e) => {
     const value = e.target.value;
+
     if (value === '0') {
-      dispatch({
-        type: REMOVE_FROM_CART,
-        _id: item._id
-      });
+      dispatch(removeCart(item._id));
       idbPromise('cart', 'delete', { ...item });
-
     } else {
-      dispatch({
-        type: UPDATE_CART_QUANTITY,
-        _id: item._id,
-        purchaseQuantity: parseInt(value)
-      });
+      dispatch(updateCartQuantity(item._id, value));
       idbPromise('cart', 'put', { ...item, purchaseQuantity: parseInt(value) });
-
     }
-  }
+  };
 
   return (
     <div className="flex-row">
@@ -59,7 +47,7 @@ const CartItem = ({ item }) => {
             onClick={() => removeFromCart(item)}
           >
             🗑️
-          </span>
+                    </span>
         </div>
       </div>
     </div>
