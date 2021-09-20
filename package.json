@@ -18,11 +18,11 @@
   "author": "sazzopardi",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "hosted-git-info": "^4.0.2",
     "if-env": "^1.0.4",
     "path-parse": "^1.0.7",
-    "redux": "^4.0.5"
+    "redux": "^4.1.1"
   },
   "devDependencies": {
     "concurrently": "^5.3.0"
