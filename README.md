@@ -4,10 +4,14 @@ Week 22 Challenge - Refactor exisiting React web application to utilize Redux ra
 
 ## User Story
 
-
+AS a senior engineer working on an e-commerce platform
+I WANT my platform to use Redux to manage global state instead of the Context API
+SO THAT my website's state management is taken out of the React ecosystem
 
 ## Live deployment
 
+https://sylviamarja.github.io/shop-shop/
+https://hidden-inlet-54060.herokuapp.com/
 
 
 
