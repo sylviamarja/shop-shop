@@ -11,6 +11,8 @@ SO THAT my website's state management is taken out of the React ecosystem
 ## Live deployment
 
 https://sylviamarja.github.io/shop-shop/
+
+
 https://hidden-inlet-54060.herokuapp.com/
 
 
